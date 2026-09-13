@@ -27,9 +27,10 @@
 }
 
 .admin__meta code {
-  padding: 1px 6px;
-  border-radius: 6px;
-  background: var(--surface-muted);
+  padding: 2px 7px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.7);
   font-size: 11px;
 }
 
@@ -39,7 +40,8 @@
 }
 
 .admin__errors {
-  background: #fff2f0;
+  background: linear-gradient(150deg, rgba(255, 240, 238, 0.95), rgba(255, 228, 224, 0.9));
+  border-color: rgba(255, 90, 74, 0.3);
 }
 
 .admin__errors ul {
@@ -48,6 +50,7 @@
   gap: 4px;
   margin-top: var(--space-2);
   font-size: 12px;
+  font-weight: 500;
   color: var(--red-deep);
 }
 
@@ -74,7 +77,7 @@
 
 .admin__label {
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--dark);
 }
 
@@ -86,34 +89,42 @@
 
 .admin__field input[type='text'],
 .admin__field input[type='number'] {
-  height: 40px;
+  height: 42px;
   padding: 0 12px;
-  border: 1.5px solid var(--gray-soft);
+  border: 1.5px solid rgba(21, 34, 56, 0.1);
   border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 1px 3px rgba(21, 34, 56, 0.05);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+.admin__field input:hover {
   background: #fff;
-  transition: border-color 0.16s ease;
 }
 
 .admin__field input:focus {
   border-color: var(--theme-color);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--theme-color) 18%, transparent);
+  background: #fff;
   outline: none;
 }
 
 .admin__field input[type='checkbox'] {
   width: 20px;
   height: 20px;
+  accent-color: var(--theme-color);
 }
 
 .admin__subtitle {
   margin-top: var(--space-4);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-muted);
 }
 
 .admin__options {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: var(--space-3);
   margin-top: var(--space-2);
 }
@@ -124,15 +135,17 @@
   gap: var(--space-2);
   padding: var(--space-3);
   border-radius: var(--radius-md);
-  background: var(--surface-muted);
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.65);
 }
 
 .admin__option-id {
   grid-column: span 2;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--theme-deep);
   text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .admin__footer {

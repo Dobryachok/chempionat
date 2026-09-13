@@ -16,9 +16,10 @@
 .modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(16, 32, 56, 0.45);
-  backdrop-filter: blur(2px);
-  animation: modal-fade 0.2s ease-out;
+  background: rgba(12, 24, 44, 0.5);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: modal-fade 0.22s ease-out;
 }
 
 .modal__panel {
@@ -28,9 +29,12 @@
   max-height: 88vh;
   display: flex;
   flex-direction: column;
-  background: var(--surface);
+  background: var(--glass-strong);
+  -webkit-backdrop-filter: blur(24px) saturate(1.5);
+  backdrop-filter: blur(24px) saturate(1.5);
+  border: 1px solid var(--glass-border);
   box-shadow: var(--shadow-float);
-  animation: modal-rise 0.24s ease-out;
+  animation: modal-rise 0.32s var(--ease-spring);
   transition: transform 0.18s ease;
 }
 
@@ -52,9 +56,9 @@
 
 .modal__grabber {
   width: 44px;
-  height: 4px;
+  height: 5px;
   border-radius: var(--radius-pill);
-  background: var(--gray-soft);
+  background: rgba(21, 34, 56, 0.14);
   margin: 10px auto 0;
 }
 
@@ -67,8 +71,8 @@
 }
 
 .modal__title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
@@ -85,12 +89,15 @@
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--surface-muted);
+  background: rgba(21, 34, 56, 0.06);
   color: var(--text-muted);
+  transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
 }
 
 .modal__close:hover {
   color: var(--dark);
+  background: rgba(21, 34, 56, 0.1);
+  transform: rotate(90deg);
 }
 
 .modal__body {
@@ -116,11 +123,11 @@
 
 @keyframes modal-rise {
   from {
-    transform: translateY(24px);
+    transform: translateY(28px) scale(0.98);
     opacity: 0;
   }
   to {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
   }
 }

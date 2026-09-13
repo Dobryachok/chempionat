@@ -10,35 +10,42 @@
 }
 
 .boot__title {
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
 .boot__text {
   font-size: 15px;
+  font-weight: 500;
   color: var(--dark);
 }
 
 .boot__hint {
   font-size: 13px;
+  line-height: 1.55;
   color: var(--text-muted);
   max-width: 420px;
 }
 
 .boot__hint code {
-  padding: 2px 6px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.65);
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
   font-size: 12px;
 }
 
 .boot__balloon {
-  width: 54px;
-  height: 68px;
+  width: 58px;
+  height: 72px;
   border-radius: 50% 50% 45% 45%;
-  background: linear-gradient(160deg, #ff8a7d, #ff4d40 55%, #c9342a);
-  box-shadow: var(--shadow-float);
+  background:
+    radial-gradient(circle at 32% 24%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 38%),
+    linear-gradient(160deg, #ff8a7d, #ff5a4a 55%, #d33225);
+  box-shadow:
+    0 18px 36px rgba(224, 53, 42, 0.35),
+    0 4px 10px rgba(21, 34, 56, 0.15);
   animation: boot-float 1.6s ease-in-out infinite;
 }
 

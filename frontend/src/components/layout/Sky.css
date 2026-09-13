@@ -8,12 +8,17 @@
 
 .sky__sun {
   position: absolute;
-  top: -90px;
-  right: -70px;
-  width: 260px;
-  height: 260px;
+  top: -110px;
+  right: -90px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 244, 214, 0.95) 0%, rgba(255, 244, 214, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(255, 246, 214, 1) 0%,
+    rgba(255, 238, 190, 0.55) 35%,
+    rgba(255, 238, 190, 0) 70%
+  );
 }
 
 .sky__drifter {
@@ -26,7 +31,7 @@
   animation-name: sky-drift;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  filter: drop-shadow(0 8px 12px rgba(60, 96, 140, 0.12));
+  filter: blur(0.4px) drop-shadow(0 10px 14px rgba(60, 96, 140, 0.14));
 }
 
 .sky__drifter--bird {

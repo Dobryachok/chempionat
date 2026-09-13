@@ -14,9 +14,17 @@ body {
   margin: 0;
   font-family: var(--font);
   color: var(--text);
-  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-low) 100%);
+  background:
+    radial-gradient(120% 60% at 85% -10%, rgba(255, 238, 190, 0.55) 0%, rgba(255, 238, 190, 0) 55%),
+    radial-gradient(90% 50% at 10% 110%, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 45%, var(--sky-low) 100%);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(255, 207, 61, 0.45);
 }
 
 h1,
@@ -33,6 +41,7 @@ button {
   border: none;
   background: none;
   color: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 button:disabled {
@@ -58,7 +67,7 @@ select {
 }
 
 :focus-visible {
-  outline: 3px solid rgba(30, 49, 80, 0.35);
+  outline: 3px solid rgba(21, 34, 56, 0.35);
   outline-offset: 2px;
 }
 
@@ -90,10 +99,25 @@ select {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  animation: screen-in 0.35s var(--ease-out);
+}
+
+@keyframes screen-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .card {
-  background: var(--surface);
+  background: var(--glass);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
+  backdrop-filter: blur(18px) saturate(1.5);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
   padding: var(--space-4);
@@ -105,15 +129,16 @@ select {
 
 .card__title {
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.01em;
 }
 
 .section-title {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 700;
   color: var(--text-muted);
-  text-transform: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .muted {

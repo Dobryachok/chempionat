@@ -8,9 +8,11 @@
   grid-template-columns: repeat(4, 1fr);
   height: calc(var(--nav-height) + env(safe-area-inset-bottom, 0px));
   padding-bottom: env(safe-area-inset-bottom, 0px);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(30, 49, 80, 0.07);
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(22px) saturate(1.6);
+  backdrop-filter: blur(22px) saturate(1.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 -6px 28px rgba(21, 34, 56, 0.1);
 }
 
 @media (min-width: 900px) {
@@ -20,17 +22,37 @@
 }
 
 .bottom-nav__tab {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 4px;
   font-size: 11px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--gray);
-  transition: color 0.16s ease;
+  transition: color 0.18s ease;
+}
+
+.bottom-nav__tab svg {
+  transition: transform 0.25s var(--ease-spring);
 }
 
 .bottom-nav__tab.is-active {
   color: var(--theme-color);
+}
+
+.bottom-nav__tab.is-active svg {
+  transform: translateY(-2px) scale(1.12);
+}
+
+.bottom-nav__tab.is-active::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  width: 34px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--theme-color);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--theme-color) 60%, transparent);
 }

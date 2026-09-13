@@ -2,9 +2,11 @@
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(255, 255, 255, 0.82);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(30, 49, 80, 0.06);
+  background: rgba(255, 255, 255, 0.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  backdrop-filter: blur(20px) saturate(1.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 4px 24px rgba(21, 34, 56, 0.08);
 }
 
 .header__inner {
@@ -28,7 +30,7 @@
   align-items: center;
   gap: 8px;
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--dark);
 }
@@ -37,7 +39,7 @@
   display: none;
   flex: 1;
   justify-content: center;
-  gap: var(--space-4);
+  gap: var(--space-2);
 }
 
 @media (min-width: 900px) {
@@ -47,21 +49,24 @@
 }
 
 .header__link {
+  position: relative;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-muted);
-  padding: 6px 2px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.16s ease, border-color 0.16s ease;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  transition: color 0.18s ease, background-color 0.18s ease;
 }
 
 .header__link:hover {
   color: var(--dark);
+  background: rgba(255, 255, 255, 0.65);
 }
 
 .header__link.is-active {
   color: var(--dark);
-  border-bottom-color: var(--theme-color);
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: inset 0 0 0 1.5px var(--theme-color), 0 4px 12px rgba(21, 34, 56, 0.08);
 }
 
 .header__right {
@@ -75,27 +80,33 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  height: 34px;
-  padding: 0 12px;
+  height: 36px;
+  padding: 0 14px;
   border-radius: var(--radius-pill);
-  background: var(--surface-muted);
+  background: linear-gradient(180deg, #ffe9a8 0%, #ffd24d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 14px rgba(240, 165, 18, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.7);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 800;
+  color: #6b4a00;
   font-variant-numeric: tabular-nums;
 }
 
 .header__icon-button {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   color: var(--text-muted);
-  background: var(--surface-muted);
-  transition: color 0.16s ease, background-color 0.16s ease;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 8px rgba(21, 34, 56, 0.08);
+  transition: color 0.18s ease, background-color 0.18s ease, transform 0.18s ease;
 }
 
 .header__icon-button:hover {
   color: var(--dark);
-  background: var(--gray-soft);
+  background: #fff;
+  transform: translateY(-1px);
 }

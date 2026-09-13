@@ -5,42 +5,71 @@
 }
 
 .result__card {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-2);
   text-align: center;
   padding: var(--space-5) var(--space-4);
+  overflow: hidden;
+}
+
+.result__card::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .result__card.is-win {
-  background: linear-gradient(180deg, #ffffff 0%, #eefaf3 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(226, 250, 238, 0.88) 100%);
+}
+
+.result__card.is-win::before {
+  background: radial-gradient(circle, rgba(255, 207, 61, 0.4) 0%, rgba(255, 207, 61, 0) 65%);
 }
 
 .result__card.is-loss {
-  background: linear-gradient(180deg, #ffffff 0%, #fff0ee 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 236, 232, 0.88) 100%);
+}
+
+.result__card.is-loss::before {
+  background: radial-gradient(circle, rgba(255, 90, 74, 0.22) 0%, rgba(255, 90, 74, 0) 65%);
 }
 
 .result__balloon {
+  position: relative;
   margin-bottom: var(--space-2);
 }
 
 .result__title {
-  font-size: 22px;
-  font-weight: 700;
+  position: relative;
+  font-size: 23px;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .result__multiplier {
-  font-size: clamp(40px, 12vw, 60px);
-  font-weight: 700;
+  position: relative;
+  font-size: clamp(44px, 12vw, 64px);
+  font-weight: 900;
   letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
-  color: var(--yellow-deep);
-  text-shadow: 0 0 24px rgba(252, 195, 62, 0.6);
+  background: linear-gradient(120deg, var(--yellow-deep), #ffcf3d 60%, var(--yellow-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 18px rgba(255, 207, 61, 0.55));
 }
 
 .result__subtitle {
+  position: relative;
   font-size: 13px;
   line-height: 1.5;
   color: var(--text-muted);
@@ -48,6 +77,7 @@
 }
 
 .result__grid {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-2);
@@ -61,7 +91,9 @@
   gap: 3px;
   padding: 12px;
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: var(--shadow-soft);
   font-size: 12px;
 }
 
@@ -70,7 +102,7 @@
   align-items: center;
   gap: 5px;
   font-size: 17px;
-  font-weight: 700;
+  font-weight: 800;
   font-variant-numeric: tabular-nums;
 }
 
@@ -79,6 +111,7 @@
 }
 
 .result__reward {
+  position: relative;
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -86,32 +119,38 @@
   margin-top: var(--space-2);
   padding: 12px 14px;
   border-radius: var(--radius-md);
-  background: rgba(252, 195, 62, 0.16);
+  background: linear-gradient(120deg, rgba(255, 224, 102, 0.35) 0%, rgba(255, 207, 61, 0.18) 100%);
+  border: 1px solid rgba(255, 224, 102, 0.6);
+  box-shadow: 0 6px 18px rgba(240, 165, 18, 0.18);
   text-align: left;
 }
 
 .result__reward-icon {
   display: grid;
   place-items: center;
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
-  border-radius: var(--radius-sm);
-  background: #fff;
+  border-radius: 14px;
+  background: linear-gradient(160deg, #fff, #fff7dd);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(240, 165, 18, 0.3);
   color: var(--yellow-deep);
 }
 
 .result__reward-icon.is-rare {
   color: #3b82f6;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .result__reward-icon.is-epic {
   color: #8b5cf6;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.35);
 }
 
 .result__reward-title {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .result__reward-text {
@@ -121,6 +160,7 @@
 }
 
 .result__actions {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
@@ -129,6 +169,7 @@
 }
 
 .result__idle {
+  position: relative;
   font-size: 12px;
   color: var(--gray);
   font-variant-numeric: tabular-nums;
@@ -157,11 +198,13 @@
 .result__fairness-list div {
   padding: 10px 12px;
   border-radius: var(--radius-sm);
-  background: var(--surface-muted);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.65);
 }
 
 .result__fairness-list dt {
   font-size: 11px;
+  font-weight: 600;
   color: var(--text-muted);
 }
 
@@ -169,6 +212,6 @@
   margin: 2px 0 0;
   font-family: 'Courier New', monospace;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   overflow-wrap: anywhere;
 }

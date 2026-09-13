@@ -4,6 +4,12 @@
   filter: drop-shadow(0 14px 22px rgba(30, 49, 80, 0.22));
 }
 
+.balloon__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .balloon--floating {
   animation-name: balloon-float;
   animation-timing-function: ease-in-out;

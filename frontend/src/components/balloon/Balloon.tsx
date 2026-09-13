@@ -39,7 +39,7 @@ export function Balloon({
 
   return (
     <div className={classes} style={{ width: size, animationDuration: `${floatSeconds}s` }}>
-      <svg viewBox="0 0 120 168" width="100%" height="auto" role="img" aria-label={`Воздушный шар`}>
+      <svg className="balloon__svg" viewBox="0 0 120 168" role="img" aria-label={`Воздушный шар`}>
         <defs>
           <radialGradient id={`env-${id}`} cx="38%" cy="28%" r="78%">
             <stop offset="0%" stopColor={colors.light} />

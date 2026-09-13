@@ -1,0 +1,24 @@
+{
+  "name": "chempionat",
+  "version": "1.0.0",
+  "description": "Рабочий веб-прототип бонусной игры для «Столото»: игрок ставит бонусные баллы и старается забрать\r растущий выигрыш до того, как шар лопнет. Вся случайность и все расчёты выполняются на сервере,\r клиент только отображает то, что присылает бэкенд.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dobryachok/chempionat.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Dobryachok/chempionat/issues"
+  },
+  "homepage": "https://github.com/Dobryachok/chempionat#readme"
+}

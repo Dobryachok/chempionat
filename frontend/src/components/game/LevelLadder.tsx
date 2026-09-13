@@ -26,6 +26,7 @@ export function LevelLadder({
 }: LevelLadderProps) {
   // Rendered top down: the highest level is the top of the flight.
   const levels = thresholds.map((threshold, index) => ({ level: index + 1, threshold })).reverse()
+  const showBoosterColumn = boosterLevel > 0
 
   return (
     <ol className={`ladder ${compact ? 'ladder--compact' : ''}`} aria-label="Уровни полёта">
@@ -41,15 +42,23 @@ export function LevelLadder({
           .filter(Boolean)
           .join(' ')
 
+        const isCurrent = level === passed && passed > 0
+
         return (
           <li key={level} className={classes}>
-            <span className="ladder__marker">{level}</span>
-            <span className="ladder__threshold">x{threshold.toFixed(2)}</span>
-            {hasBooster && (
-              <span className={`ladder__booster ${boosterApplied ? 'is-applied' : ''}`}>
-                <IconBoost size={14} />x{boosterValue % 1 === 0 ? boosterValue.toFixed(0) : boosterValue.toFixed(1)}
-              </span>
-            )}
+            {showBoosterColumn &&
+              (hasBooster ? (
+                <span className={`ladder__booster ${boosterApplied ? 'is-applied' : ''}`}>
+                  <IconBoost size={14} />
+                  x{boosterValue % 1 === 0 ? boosterValue.toFixed(0) : boosterValue.toFixed(1)}
+                </span>
+              ) : (
+                <span className="ladder__booster-spacer" aria-hidden="true" />
+              ))}
+            <div className={`ladder__row ${isCurrent ? 'is-current' : ''}`}>
+              <span className="ladder__marker">{level}</span>
+              <span className="ladder__threshold">x{threshold.toFixed(2)}</span>
+            </div>
           </li>
         )
       })}

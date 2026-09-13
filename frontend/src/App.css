@@ -1,0 +1,53 @@
+.boot {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.boot__title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.boot__text {
+  font-size: 15px;
+  color: var(--dark);
+}
+
+.boot__hint {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+.boot__hint code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.65);
+  font-size: 12px;
+}
+
+.boot__balloon {
+  width: 54px;
+  height: 68px;
+  border-radius: 50% 50% 45% 45%;
+  background: linear-gradient(160deg, #ff8a7d, #ff4d40 55%, #c9342a);
+  box-shadow: var(--shadow-float);
+  animation: boot-float 1.6s ease-in-out infinite;
+}
+
+@keyframes boot-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(2deg);
+  }
+}

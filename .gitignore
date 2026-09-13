@@ -1,0 +1,25 @@
+# toolchain (portable JDK/Maven, not part of the source)
+tools/
+
+# java
+backend/target/
+*.class
+
+# node
+node_modules/
+frontend/dist/
+
+# data
+backend/data/
+*.mv.db
+*.trace.db
+
+# local run logs
+*.log
+
+# ide / os
+.idea/
+.vscode/
+*.iml
+Thumbs.db
+.DS_Store

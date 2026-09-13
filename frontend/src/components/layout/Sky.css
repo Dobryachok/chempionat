@@ -1,0 +1,64 @@
+.sky {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sky__sun {
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 244, 214, 0.95) 0%, rgba(255, 244, 214, 0) 70%);
+}
+
+.sky__drifter {
+  position: absolute;
+  left: -160px;
+  will-change: transform;
+}
+
+.sky__drifter--cloud {
+  animation-name: sky-drift;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  filter: drop-shadow(0 8px 12px rgba(60, 96, 140, 0.12));
+}
+
+.sky__drifter--bird {
+  animation-name: sky-flap;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.sky__drifter.is-back {
+  animation-direction: reverse;
+}
+
+@keyframes sky-drift {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(100vw + 320px), 14px, 0);
+  }
+}
+
+@keyframes sky-flap {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  35% {
+    transform: translate3d(35vw, -26px, 0);
+  }
+  70% {
+    transform: translate3d(70vw, 18px, 0);
+  }
+  to {
+    transform: translate3d(calc(100vw + 220px), -8px, 0);
+  }
+}

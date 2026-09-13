@@ -1,0 +1,127 @@
+.profile {
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.profile__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.profile__avatar {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--theme-soft);
+  color: var(--theme-deep);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.profile__name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.profile__identity .muted {
+  font-size: 12px;
+}
+
+.profile__stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2);
+}
+
+@media (min-width: 620px) {
+  .profile__stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.profile__stat {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.profile__stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.profile__stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.profile__collection-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.profile__collection-head .card__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.profile__collection-text {
+  margin-top: 4px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.profile__pieces {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(132px, 1fr));
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.profile__piece {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--surface-muted);
+  font-size: 12px;
+  color: var(--gray);
+  opacity: 0.75;
+}
+
+.profile__piece.is-owned {
+  background: rgba(252, 195, 62, 0.2);
+  color: var(--dark);
+  font-weight: 600;
+  opacity: 1;
+}
+
+.profile__settings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(30, 49, 80, 0.06);
+  font-size: 14px;
+}
+
+.profile__settings-row:last-of-type {
+  border-bottom: none;
+}
+
+.profile__version {
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--gray);
+}

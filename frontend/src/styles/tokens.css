@@ -1,0 +1,63 @@
+:root {
+  /* Palette of the layout */
+  --red: #ff4d40;
+  --red-soft: #ffe3e0;
+  --red-deep: #d93a2f;
+  --green: #38b273;
+  --green-soft: #ddf3e8;
+  --green-deep: #2b8f5c;
+  --yellow: #fcc33e;
+  --yellow-deep: #f0ad14;
+  --dark: #1e3150;
+  --light: #f8fafc;
+  --gray: #94a3b8;
+  --gray-soft: #e2e8f0;
+
+  --sky-top: #6cb7ea;
+  --sky-mid: #a8d8f2;
+  --sky-low: #dcefff;
+
+  --surface: #ffffff;
+  --surface-muted: #f2f6fb;
+  --text: var(--dark);
+  --text-muted: #64748b;
+
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 12px 30px rgba(30, 49, 80, 0.12);
+  --shadow-soft: 0 6px 16px rgba(30, 49, 80, 0.1);
+  --shadow-float: 0 18px 40px rgba(30, 49, 80, 0.22);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --font: 'Inter', 'Segoe UI', 'Roboto', system-ui, -apple-system, sans-serif;
+
+  --header-height: 60px;
+  --nav-height: 64px;
+  --content-max: 1180px;
+
+  --theme-color: var(--red);
+  --theme-soft: var(--red-soft);
+  --theme-deep: var(--red-deep);
+}
+
+[data-theme='green'] {
+  --theme-color: var(--green);
+  --theme-soft: var(--green-soft);
+  --theme-deep: var(--green-deep);
+}
+
+[data-theme='red'] {
+  --theme-color: var(--red);
+  --theme-soft: var(--red-soft);
+  --theme-deep: var(--red-deep);
+}

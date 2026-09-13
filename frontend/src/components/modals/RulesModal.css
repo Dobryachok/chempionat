@@ -1,0 +1,18 @@
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.rules__block p {
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.rules__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+}

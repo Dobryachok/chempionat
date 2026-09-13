@@ -1,0 +1,36 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: balloon-backend
+  datasource:
+    url: jdbc:h2:file:./data/balloon;DB_CLOSE_DELAY=-1;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jackson:
+    default-property-inclusion: non_null
+
+game:
+  # External configuration file: editable without rebuilding the application.
+  # Changes are picked up automatically (hot reload) and can also be applied via the admin API.
+  config-path: ./config/game-config.json
+  # Frontend dev-server origins allowed to call the API.
+  allowed-origins: "http://localhost:5173,http://127.0.0.1:5173,http://localhost:4173"
+
+logging:
+  level:
+    root: INFO
+    ru.stoloto.balloon: INFO

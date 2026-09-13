@@ -1,0 +1,100 @@
+.history {
+  display: flex;
+  flex-direction: column;
+}
+
+.history__empty {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: var(--space-3) 0;
+}
+
+.history__row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(30, 49, 80, 0.06);
+}
+
+.history__row:last-child {
+  border-bottom: none;
+}
+
+.history__dot {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.history__dot--red {
+  background: var(--red);
+}
+
+.history__dot--green {
+  background: var(--green);
+}
+
+.history__main {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.history__player {
+  font-size: 14px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history__meta {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.history__numbers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.history__multiplier {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.history__multiplier.is-win {
+  color: var(--green-deep);
+}
+
+.history__multiplier.is-loss {
+  color: var(--red-deep);
+}
+
+.history__time {
+  font-size: 11px;
+  color: var(--gray);
+}
+
+.history__result {
+  min-width: 72px;
+  text-align: right;
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.history__result.is-win {
+  color: var(--green-deep);
+}
+
+.history__result.is-loss {
+  color: var(--gray);
+}

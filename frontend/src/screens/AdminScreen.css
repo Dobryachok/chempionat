@@ -1,0 +1,142 @@
+.admin {
+  max-width: 940px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.admin__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.admin__head .card__title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin__meta {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  max-width: 560px;
+}
+
+.admin__meta code {
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--surface-muted);
+  font-size: 11px;
+}
+
+.admin__head-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.admin__errors {
+  background: #fff2f0;
+}
+
+.admin__errors ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--space-2);
+  font-size: 12px;
+  color: var(--red-deep);
+}
+
+.admin__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.admin__field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin__field--wide {
+  grid-column: span 2;
+}
+
+.admin__field--switch {
+  justify-content: flex-start;
+}
+
+.admin__label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dark);
+}
+
+.admin__hint {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+.admin__field input[type='text'],
+.admin__field input[type='number'] {
+  height: 40px;
+  padding: 0 12px;
+  border: 1.5px solid var(--gray-soft);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  transition: border-color 0.16s ease;
+}
+
+.admin__field input:focus {
+  border-color: var(--theme-color);
+  outline: none;
+}
+
+.admin__field input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+.admin__subtitle {
+  margin-top: var(--space-4);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.admin__options {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.admin__option {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--surface-muted);
+}
+
+.admin__option-id {
+  grid-column: span 2;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--theme-deep);
+  text-transform: uppercase;
+}
+
+.admin__footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: var(--space-4);
+}
